@@ -40,8 +40,8 @@ Configuration
 Global Prefix
 =============
 
-To add a common prefix to all models simply set `DB_PREFIX` to the string that
-you want to be prepended.
+To add a common prefix to all models simply set `DB_PREFIX` in settings.py
+to the string that you want to be prepended.
 
 	DB_PREFIX = "foo_"
 
@@ -49,3 +49,6 @@ For example, for the model bar_app.models.Baz the default table would be:
 `bar_app_baz`
 
 By setting `DB_PREFIX` to `foo_`, the table would be `foo_bar_app_baz`.
+
+To disable the prefixing on a per model basis (for example, on an unmanaged
+model), set the class attribute `use_db_prefix` to `False` in the class.
